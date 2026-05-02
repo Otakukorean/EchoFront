@@ -3,6 +3,10 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
+import { AuthInitializer } from "@/components/providers/auth-initializer";
+import { QueryProvider } from "@/components/providers/query-provider";
+import { Toaster } from "@/components/ui/sonner";
+
 import { inter } from "@/lib/fonts";
 
 import { siteConfig } from "../config/site";
@@ -15,21 +19,21 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
   keywords: [
-    "Landing page template",
-    "Components",
-    "Shadcn",
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Radix UI",
+    "online store",
+    "multi-vendor e-commerce",
+    "create a store",
+    "sell online",
+    "e-commerce platform",
+    "custom storefront",
+    "Echo",
   ],
   authors: [
     {
-      name: "Mikolaj Dobrucki",
-      url: "https://mikolajdobrucki.com",
+      name: "Echo",
+      url: "https://echostore.dev",
     },
   ],
-  creator: "mikolajdobrucki",
+  creator: "echostore",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -51,7 +55,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@mikolajdobrucki",
+    creator: "@echostore",
   },
   icons: {
     icon: "/favicon.svg",
@@ -72,14 +76,18 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className={`${inter.variable} bg-background font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <QueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <AuthInitializer />
+            {children}
+            <Toaster richColors position="top-right" />
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   );

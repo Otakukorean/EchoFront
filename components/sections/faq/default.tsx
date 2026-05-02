@@ -1,7 +1,4 @@
-import Link from "next/link";
 import { ReactNode } from "react";
-
-import { siteConfig } from "@/config/site";
 
 import {
   Accordion,
@@ -24,126 +21,67 @@ interface FAQProps {
 }
 
 export default function FAQ({
-  title = "Questions and Answers",
+  title = "Frequently asked questions",
   items = [
     {
-      question:
-        "Why is building a great landing page critical for your business?",
+      question: "How do I create a store on Echo?",
       answer: (
-        <>
-          <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
-            In today&apos;s AI-driven world, standing out is harder than ever.
-            While anyone can build a product, a professional landing page makes
-            the difference between success and failure.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
-            Launch UI helps you ship faster without compromising on quality.
-          </p>
-        </>
-      ),
-    },
-    {
-      question: "Why use Launch UI instead of a no-code tool?",
-      answer: (
-        <>
-          <p className="text-muted-foreground mb-4 max-w-[600px]">
-            No-code tools lock you into their ecosystem with recurring fees and
-            limited control. They often come with performance issues and make it
-            difficult to integrate with your product.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[600px]">
-            You can&apos;t even change your hosting provider and basic things
-            like web analytics come as extra costs and paid add-ons.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[600px]">
-            What might seem like a convenient solution today could paint you
-            into a corner tomorrow, limiting your ability to scale and adapt.
-            Launch UI gives you full control of your code while maintaining
-            professional quality.
-          </p>
-        </>
-      ),
-    },
-    {
-      question:
-        "How is Launch UI different from other component libraries and templates?",
-      answer: (
-        <>
-          <p className="text-muted-foreground mb-4 max-w-[580px]">
-            Launch UI stands out with premium design quality and delightful
-            touches of custom animations and illustrations.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[580px]">
-            All components are carefully crafted to help position your product
-            as a professional tool, avoiding the generic template look.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
-            Unlike many libraries that rely on outdated CSS practices and old
-            dependencies, Launch UI is built with modern technologies and best
-            practices in mind.
-          </p>
-        </>
-      ),
-    },
-    {
-      question: 'What exactly does it mean that "The code is yours"?',
-      answer: (
-        <>
-          <p className="text-muted-foreground mb-4 max-w-[580px]">
-            The basic version of Launch UI is open-source and free forever,
-            under a do-whatever-you-want license.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[580px]">
-            The pro version that contains more components and options is a
-            one-time purchase that gives you lifetime access to all current and
-            future content. Use it for unlimited personal and commercial
-            projects - no recurring fees or restrictions.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[580px]">
-            For complete details about licensing and usage rights, check out{" "}
-            <Link
-              href={`${siteConfig.url}/pricing`}
-              className="text-foreground underline"
-            >
-              the pricing page
-            </Link>
-            .
-          </p>
-        </>
-      ),
-    },
-    {
-      question: "Are Figma files included?",
-      answer: (
-        <p className="text-muted-foreground mb-4 max-w-[580px]">
-          Yes! The complete Launch UI template is available for free on the{" "}
-          <Link
-            href="https://www.figma.com/community/file/1420131743903900629/launch-ui-landing-page-components-ui-kit"
-            className="text-foreground underline"
-          >
-            Figma community
-          </Link>
-          .
+        <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
+          Sign up for a free account, pick a store name, and choose a unique
+          slug (e.g. echo.com/my-shop). Your store goes live instantly — no
+          setup required.
         </p>
       ),
     },
     {
-      question: "Can I get a discount?",
+      question: "What is a store slug?",
       answer: (
-        <>
-          <p className="text-muted-foreground mb-4 max-w-[580px]">
-            Actually, yes! I&apos;m always actively looking for beta testers of
-            new features. If you are interested in exchanging feedback for a
-            discount, please contact me via{" "}
-            <a
-              href={siteConfig.links.email}
-              className="underline underline-offset-2"
-            >
-              email
-            </a>
-            .
-          </p>
-        </>
+        <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
+          A slug is the unique URL identifier for your store. For example, if
+          you choose the slug <strong>cool-kicks</strong>, your public storefront
+          will be available at <strong>echo.com/cool-kicks</strong>. Customers
+          can browse your products directly at that link — no login needed.
+        </p>
+      ),
+    },
+    {
+      question: "Can I add multiple products with different variants?",
+      answer: (
+        <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
+          Yes! Echo supports product variations such as size, color, or any
+          custom attribute. You can also upload multiple images per product and
+          organize them into categories.
+        </p>
+      ),
+    },
+    {
+      question: "Where are my product images stored?",
+      answer: (
+        <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
+          Echo handles image hosting for you using Azure Blob Storage. Just
+          upload your images and we take care of the rest — no third-party
+          accounts or configuration needed.
+        </p>
+      ),
+    },
+    {
+      question: "Is Echo free to use?",
+      answer: (
+        <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
+          Yes — Echo has a free tier that lets you launch one store with up to
+          20 products, completely free forever. When you&apos;re ready to scale,
+          our Pro plan unlocks unlimited stores, unlimited products, and more.
+        </p>
+      ),
+    },
+    {
+      question: "Do customers need to create an account to buy?",
+      answer: (
+        <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
+          Customers can browse any public storefront without signing in. Only
+          store owners need an Echo account to manage their products and
+          dashboard.
+        </p>
       ),
     },
   ],

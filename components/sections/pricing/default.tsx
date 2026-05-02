@@ -1,4 +1,4 @@
-import { User, Users } from "lucide-react";
+import { Rocket, Zap } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -16,68 +16,59 @@ interface PricingProps {
 const DEFAULT_PRICING_PLANS: PricingColumnProps[] = [
   {
     name: "Free",
-    description: "For everyone starting out on a website for their big idea",
+    icon: <Zap className="size-4" />,
+    description: "Perfect for getting started — launch your first store today",
     price: 0,
-    priceNote: "Free and open-source forever. Get started now.",
+    priceNote: "Free forever. No credit card required.",
     cta: {
       variant: "glow",
-      label: "Get started for free",
-      href: siteConfig.getStartedUrl,
+      label: "Create your free store",
+      href: "/signup",
     },
     features: [
-      "1 website template",
-      "9 blocks and sections",
-      "4 custom animations",
+      "1 store with custom slug",
+      "Up to 20 products",
+      "Unlimited product images",
+      "Public storefront",
+      "Product search & category filter",
+      "Secure JWT authentication",
     ],
     variant: "default",
-    className: "hidden lg:flex",
   },
   {
     name: "Pro",
-    icon: <User className="size-4" />,
-    description: "For early-stage founders, solopreneurs and indie devs",
-    price: 99,
-    priceNote: "Lifetime access. Free updates. No recurring fees.",
+    icon: <Rocket className="size-4" />,
+    description: "For serious sellers who need more power and flexibility",
+    price: 19,
+    priceNote: "Per month. Cancel anytime.",
     cta: {
       variant: "default",
-      label: "Get all-access",
+      label: "Start selling with Pro",
       href: siteConfig.pricing.pro,
     },
     features: [
-      `${siteConfig.stats.templates} templates`,
-      `${siteConfig.stats.sections} blocks and sections`,
-      `${siteConfig.stats.illustrations} illustrations`,
-      `${siteConfig.stats.animations} custom animations`,
+      "Unlimited stores",
+      "Unlimited products",
+      "Unlimited product images",
+      "Priority image hosting",
+      "Advanced analytics dashboard",
+      "Custom domain support",
+      "Priority support",
+      "Early access to new features",
     ],
     variant: "glow-brand",
-  },
-  {
-    name: "Pro Team",
-    icon: <Users className="size-4" />,
-    description: "For teams and agencies working on cool products together",
-    price: 499,
-    priceNote: "Lifetime access. Free updates. No recurring fees.",
-    cta: {
-      variant: "default",
-      label: "Get all-access for your team",
-      href: siteConfig.pricing.team,
-    },
-    features: [
-      "All the templates, components and sections available for your entire team",
-    ],
-    variant: "glow",
   },
 ];
 
 export default function Pricing({
-  title = "Build your dream landing page, today.",
-  description = "Get lifetime access to all the components. No recurring fees. Just simple, transparent pricing.",
+  title = "Simple, transparent pricing",
+  description = "Start for free and scale as you grow. No hidden fees, no surprises.",
   plans = DEFAULT_PRICING_PLANS,
   className = "",
 }: PricingProps) {
   return (
-    <Section className={cn(className)}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
+    <Section id="pricing" className={cn(className)}>
+      <div className="mx-auto flex max-w-4xl flex-col items-center gap-12">
         {(title || description) && (
           <div className="flex flex-col items-center gap-4 px-4 text-center sm:gap-8">
             {title && (
@@ -86,14 +77,14 @@ export default function Pricing({
               </h2>
             )}
             {description && (
-              <p className="text-md text-muted-foreground max-w-[600px] font-medium sm:text-xl">
+              <p className="text-md text-muted-foreground max-w-[500px] font-medium sm:text-xl">
                 {description}
               </p>
             )}
           </div>
         )}
         {plans !== false && plans.length > 0 && (
-          <div className="max-w-container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="max-w-container mx-auto grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
             {plans.map((plan) => (
               <PricingColumn
                 key={plan.name}

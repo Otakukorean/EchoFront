@@ -1,31 +1,18 @@
 export const siteConfig = {
-  name: "Launch UI",
-  url: "https://launchuicomponents.com",
-  getStartedUrl:
-    "https://launchuicomponents.com/docs/getting-started/introduction",
-  ogImage: "https://launchuicomponents.com/og.jpg",
+  name: "Echo",
+  url: "https://echostore.dev",
+  getStartedUrl: "https://echostore.dev/signup",
+  ogImage: "https://echostore.dev/og.jpg",
   description:
-    "Landing page components built with React, Shadcn/ui and Tailwind that will make your website feel premium.",
-  version: "v2.9",
+    "Create your own online store in minutes. Echo is a multi-vendor e-commerce platform where anyone can sell — no website needed.",
   links: {
-    twitter: "https://twitter.com/mikolajdobrucki",
-    github: "https://github.com/launch-ui/launch-ui",
-    email: "mailto:contact@mikolajdobrucki.com",
+    twitter: "https://twitter.com/echostore",
+    github: "https://github.com/echostore",
+    email: "mailto:hello@echostore.dev",
   },
   pricing: {
-    pro: "https://launchui.lemonsqueezy.com/buy/b4798c68-c858-4c34-860b-069b5a0d6c4e",
-    team: "https://launchui.lemonsqueezy.com/buy/130d8cfe-e123-464b-9f67-c74c5fedfb45",
-  },
-  stats: {
-    figma: 9923,
-    github: 2078,
-    cli: 21675,
-    total: "33.7k+",
-    updated: "28 Apr 2026",
-    sections: 74,
-    illustrations: 23,
-    animations: 15,
-    templates: 7,
+    free: "https://echostore.dev/signup",
+    pro: "https://echostore.dev/pricing",
   },
 };
 

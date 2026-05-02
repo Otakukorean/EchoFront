@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
+import EchoLogo from "../../logos/echo";
 import {
   Footer,
   FooterBottom,
@@ -33,34 +33,38 @@ interface FooterProps {
 }
 
 export default function FooterSection({
-  logo = <LaunchUI />,
-  name = "Launch UI",
+  logo = <EchoLogo />,
+  name = "Echo",
   columns = [
     {
       title: "Product",
       links: [
+        { text: "Features", href: "#features" },
+        { text: "How it works", href: "#how-it-works" },
+        { text: "Pricing", href: "#pricing" },
         { text: "Changelog", href: siteConfig.url },
+      ],
+    },
+    {
+      title: "Sellers",
+      links: [
+        { text: "Create a store", href: siteConfig.getStartedUrl },
+        { text: "Sign in", href: `${siteConfig.getStartedUrl}?mode=login` },
         { text: "Documentation", href: siteConfig.url },
+        { text: "Support", href: siteConfig.links.email },
       ],
     },
     {
       title: "Company",
       links: [
         { text: "About", href: siteConfig.url },
-        { text: "Careers", href: siteConfig.url },
         { text: "Blog", href: siteConfig.url },
-      ],
-    },
-    {
-      title: "Contact",
-      links: [
-        { text: "Discord", href: siteConfig.url },
-        { text: "Twitter", href: siteConfig.url },
+        { text: "Twitter", href: siteConfig.links.twitter },
         { text: "GitHub", href: siteConfig.links.github },
       ],
     },
   ],
-  copyright = "© 2026 Mikołaj Dobrucki. All rights reserved",
+  copyright = `© ${new Date().getFullYear()} Echo. All rights reserved.`,
   policies = [
     { text: "Privacy Policy", href: siteConfig.url },
     { text: "Terms of Service", href: siteConfig.url },
@@ -78,6 +82,9 @@ export default function FooterSection({
                 {logo}
                 <h3 className="text-xl font-bold">{name}</h3>
               </div>
+              <p className="text-muted-foreground max-w-[200px] text-sm">
+                Your store, live in seconds.
+              </p>
             </FooterColumn>
             {columns.map((column) => (
               <FooterColumn key={column.title}>
